@@ -39,8 +39,6 @@ class MyStack(TerraformStack):
         instance = Instance(self, "compute",
                             ami="ami-01456a894f71116f2",
                             instance_type="t2.micro",
-                            user_data = "./configure.sh",
-                            user_data_replace_on_change=True
                             )
         
         TerraformOutput(self, "public_ip",value=instance.public_ip)
